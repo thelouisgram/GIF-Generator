@@ -1,0 +1,104 @@
+*{
+    padding:0%;
+    margin:0%;
+    box-sizing:border-box;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Roboto", sans-serif;
+
+  --primary-color: #222;
+  --primary-bg: #fdfdfd;
+  --secondary-color:#ddd8d8;
+}
+
+body{
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color:var(--primary-color);
+    background-color: var(--primary-bg);
+}
+
+header{
+    padding:10px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--secondary-color);
+;
+    width:100%;
+    margin-bottom: 40px;
+
+}
+
+h1{
+    font-size:1.4rem;
+}
+
+i{
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+.fa-sun{
+    display:none;
+}
+
+footer{
+    padding:10px 40px;
+    font-size:1.8rem;
+    margin-top: 40px;
+}
+
+.container{
+    width:400px;
+}
+
+img{
+    width:100%;
+  margin-bottom: 20px;
+    
+}
+
+legend{
+    text-align:center;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size:1.5rem;
+}
+
+#form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: var(--primary-color);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: var(--primary-bg);
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+button:hover,button:active, button:focus {
+  background: var(--secondary-color);
+  color: var(--primary-color)
+}
