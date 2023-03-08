@@ -1,24 +1,21 @@
-const gen = document.querySelector('#generate')
+const gen = document.querySelector('#generate');
 const img = document.querySelector('img');
-const input = document.querySelector('#input')
-const form = document.querySelector('#form')
-const button = document.querySelector('#submit')
-const demo = document.querySelector('#.demo')
+const input = document.querySelector('#input');
+const demo = document.querySelector('#demo');
 
-function genGif(){
-  fetch(`https://api.giphy.com/v1/gifs/translate?api_key=fpAHxNRZhZCBWtvfpolNwzvYTyJ8ApPs&s=${input.value}`, {mode: 'cors'})
-  .then(function(response) {
-      return response.json();
-    })
-    .then(function(response) {
-      img.src = response.data.images.original.url;
-    });
+async function genGif(){
+  let apiUrl;
+  
+  if (input.value === "") {
+    apiUrl = "https://api.giphy.com/v1/gifs/random?api_key=fpAHxNRZhZCBWtvfpolNwzvYTyJ8ApPs&tag=&rating=g";
+    demo.innerText = 'empty'
+  } else {
+    apiUrl = `https://api.giphy.com/v1/gifs/translate?api_key=fpAHxNRZhZCBWtvfpolNwzvYTyJ8ApPs&s=${input.value}`;
+  }
+  
+  img.style.display = 'block'
+  const response = await fetch(apiUrl, {mode: 'cors'});
+  const newData = await response.json();
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-})
-
-
-gen.addEventListener('click', genGif)
-button.addEventListener('click', genGif)
+gen.addEventListener('click', genGif);
